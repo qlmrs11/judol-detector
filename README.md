@@ -23,6 +23,24 @@ Setiap karakter komentar ditampilkan beserta kode Unicode dan keluarga penyamara
 
 Model hanya memberi saran penandaan. Keputusan akhir tetap ada pada moderator.
 
+## Tampilan
+
+**Contoh**: komentar tersamar, karakter Unicode-nya, dan putusan ketiga model.
+
+![Tab Contoh](docs/1_contoh.png)
+
+**Coba sendiri**: memeriksa komentar yang ditulis pengguna.
+
+![Tab Coba sendiri](docs/2_coba_sendiri.png)
+
+**Uji penyamaran**: satu komentar diubah ke berbagai keluarga penyamaran.
+
+![Tab Uji penyamaran](docs/3_uji_penyamaran.png)
+
+**Ringkasan hasil**: Macro-F1 pada data biasa dibandingkan dengan skenario penyamaran terburuk.
+
+![Tab Ringkasan hasil](docs/4_ringkasan_hasil.png)
+
 ## Menjalankan secara lokal
 
 ```bash
