@@ -1,0 +1,115 @@
+{
+ "P9": {
+  "konfigurasi": {
+   "norm": "nfkc",
+   "stats": true,
+   "aug": 1.0,
+   "C": 1.0
+  },
+  "seed": 11,
+  "detik_latih": 3.9,
+  "ukuran_mb": 1.5,
+  "semua_prediksi_identik": true,
+  "per_skenario": [
+   {
+    "skenario": "S0",
+    "identik": true,
+    "macro_f1": 0.9908,
+    "macro_f1_bab4": 0.9908
+   },
+   {
+    "skenario": "S1",
+    "identik": true,
+    "macro_f1": 0.9562,
+    "macro_f1_bab4": 0.9562
+   },
+   {
+    "skenario": "S2",
+    "identik": true,
+    "macro_f1": 0.9939,
+    "macro_f1_bab4": 0.9939
+   },
+   {
+    "skenario": "S3_1",
+    "identik": true,
+    "macro_f1": 0.9908,
+    "macro_f1_bab4": 0.9908
+   },
+   {
+    "skenario": "S3_3",
+    "identik": true,
+    "macro_f1": 0.9908,
+    "macro_f1_bab4": 0.9908
+   },
+   {
+    "skenario": "S3_5",
+    "identik": true,
+    "macro_f1": 0.9908,
+    "macro_f1_bab4": 0.9908
+   },
+   {
+    "skenario": "S4",
+    "identik": true,
+    "macro_f1": 0.9101,
+    "macro_f1_bab4": 0.9101
+   }
+  ]
+ },
+ "P3": {
+  "konfigurasi": "{'norm': 'none', 'analyzer': 'char', 'ngram': (1, 3), 'kw': 'alyudani', 'min_df': 2, 'max_df': 0.95, 'kind': 'lr', 'C': 10, 'balanced': True, 'smote': True}",
+  "seed": 11,
+  "detik_latih": 4.6,
+  "ukuran_mb": 0.1,
+  "semua_prediksi_identik": true,
+  "per_skenario": [
+   {
+    "skenario": "S0",
+    "identik": true,
+    "macro_f1": 0.9856,
+    "macro_f1_bab4": 0.9856
+   },
+   {
+    "skenario": "S1",
+    "identik": true,
+    "macro_f1": 0.8803,
+    "macro_f1_bab4": 0.8803
+   },
+   {
+    "skenario": "S2",
+    "identik": true,
+    "macro_f1": 0.9577,
+    "macro_f1_bab4": 0.9577
+   },
+   {
+    "skenario": "S3_1",
+    "identik": true,
+    "macro_f1": 0.9795,
+    "macro_f1_bab4": 0.9795
+   },
+   {
+    "skenario": "S3_3",
+    "identik": true,
+    "macro_f1": 0.9656,
+    "macro_f1_bab4": 0.9656
+   },
+   {
+    "skenario": "S3_5",
+    "identik": true,
+    "macro_f1": 0.9511,
+    "macro_f1_bab4": 0.9511
+   },
+   {
+    "skenario": "S4",
+    "identik": true,
+    "macro_f1": 0.9476,
+    "macro_f1_bab4": 0.9476
+   }
+  ]
+ },
+ "_versi": {
+  "python": "3.11.9",
+  "scikit_learn": "1.5.0",
+  "numpy": "2.4.6",
+  "pandas": "2.3.3"
+ }
+}

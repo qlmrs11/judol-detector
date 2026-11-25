@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Data mentah/olahan tidak ikut repo (unduh dari Kaggle; lihat README)
+*.csv
+!hasil/*.csv
+*.pkl
+*.xlsx
+
+# Rahasia dan sesi login
+.env
+*.env
+*.local.env
+state_login.json
+kredensial*
+.streamlit/secrets.toml
+
+# Artefak alat desain
+.impeccable/

@@ -1,0 +1,10 @@
+# Versi dikunci sama dengan saat model dilatih (models/info_model.json); scikit-learn harus sama agar model joblib termuat.
+streamlit==1.67.0
+scikit-learn==1.5.0
+imbalanced-learn==0.14.2
+numpy==2.4.6
+scipy==1.17.1
+pandas==2.3.3
+joblib==1.5.0
+altair==5.5.0
+matplotlib==3.9.0
