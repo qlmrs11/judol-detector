@@ -44,3 +44,5 @@ Gunakan Python 3.11. Versi scikit-learn dikunci karena model hanya dapat dimuat 
 ## Author
 
 **Qalam**. Aplikasi ini dibuat sebagai bagian dari tugas akhir (skripsi).
+
+Dosen pembimbing: **Arif Rahman Hakim, S.Kom., M.Kom.**
