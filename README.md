@@ -1,36 +1,46 @@
-# Dashboard Moderasi Komentar Judol
+# Judol Detector
 
-Aplikasi demonstrasi artefak Tugas Akhir: deteksi komentar judi online (judol) di YouTube yang disamarkan dengan
-karakter Unicode, menggunakan **Feature Fusion iterasi 3 (P9)**.
+Aplikasi web untuk mendeteksi komentar promosi judi online (judol) di YouTube yang disamarkan dengan karakter Unicode,
+misalnya `ʀᴀᴊᴀᴄᴜᴀɴ88`, `ⓡⓐⓙⓐ`, atau `𝐫𝐚𝐣𝐚𝐜𝐮𝐚𝐧`. Huruf-huruf tersebut tampak seperti huruf biasa bagi manusia,
+tetapi berbeda bagi komputer, sehingga filter kata kunci mudah ditembus.
+
+Aplikasi ini membandingkan tiga model pada komentar yang sama:
+
+| Model | Keterangan |
+|---|---|
+| **P1 Kata kunci** | Pencocokan daftar istilah dan pola nama situs, mewakili cara moderasi yang umum dipakai |
+| **P3 LR char n-gram** | Logistic Regression berbasis potongan karakter, pembanding terkuat pada data biasa |
+| **P9 Feature Fusion** | Model yang dirancang dalam penelitian ini: normalisasi NFKC, TF-IDF character n-gram, 20 fitur statistik Unicode, dan augmentasi kontrafaktual |
 
 ## Isi aplikasi
 
-1. **Dashboard benchmark.** Macro-F1 sepuluh peserta pada skenario S0–S4, profil ketahanan, perbandingan akurasi S0 dengan skor terburuk, serta FPR dan recall.
-2. **Deteksi dan antrean moderasi.** Satu komentar diklasifikasi oleh P9 dan dua pembanding (P3 LR char n-gram, P1 kata kunci). Berkas CSV menghasilkan antrean tinjauan untuk moderator.
-3. **Generator skenario stres.** Komentar diubah dengan fungsi penyamaran yang sama dengan pembentukan skenario uji, lalu diklasifikasi ketiga model.
-4. **Ablasi, target, dan proposisi.** Varian V1–V7, status target T1–T4 (iterasi 2 dan 3), dan status proposisi Pr1–Pr3.
-5. **Tentang protokol.**
+- **Contoh**: tujuh komentar siap pakai, dari huruf biasa sampai penyamaran paling berat, lengkap dengan putusan ketiga model.
+- **Coba sendiri**: tulis atau tempel komentar sendiri untuk diperiksa.
+- **Uji penyamaran**: satu komentar diubah ke berbagai keluarga penyamaran Unicode, lalu dilihat model mana yang masih bisa mendeteksinya.
+- **Ringkasan hasil**: perbandingan Macro-F1 sepuluh model pada data biasa dan pada skenario penyamaran terburuk, serta status target penelitian.
 
-## Asal model dan angka
+Setiap karakter komentar ditampilkan beserta kode Unicode dan keluarga penyamarannya, sehingga terlihat bagian mana yang disamarkan.
 
-- `models/p9.joblib` dan `models/p3.joblib` dilatih ulang dengan kode eksperimen asli (seed 11) melalui `tools/latih_model.py`.
-  Prediksi kedua model **identik** dengan prediksi seed 11 yang dilaporkan pada TA, untuk semua skenario S0–S4 (`models/info_model.json`).
-- `src/` adalah salinan tanpa perubahan dari kode eksperimen yang dibutuhkan untuk prediksi.
-- `hasil/*.csv` adalah tabel hasil eksperimen (rata-rata seed 11, 911, 99; IK 95% bootstrap 1.000 kali). Karena dashboard memakai rata-rata
-  tiga seed, angkanya dapat berbeda sedikit dari skor satu model seed 11 (misalnya Macro-F1 S4 P9: 0,914 rata-rata, 0,910 seed 11).
-- `data/confusables.txt` adalah tabel UTS #39 dari Unicode, Inc. (lihat ketentuan penggunaan di kepala berkas).
+Model hanya memberi saran penandaan. Keputusan akhir tetap ada pada moderator.
 
-Dataset tidak disertakan. Dataset yang dipakai adalah dataset komentar judi online YouTube dari Kaggle.
-
-## Menjalankan
+## Menjalankan secara lokal
 
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Versi scikit-learn dikunci karena model joblib hanya termuat dengan versi yang sama dengan saat pelatihan.
+Gunakan Python 3.11. Versi scikit-learn dikunci karena model hanya dapat dimuat dengan versi yang sama dengan saat pelatihan.
 
-## Catatan
+## Asal model dan angka
 
-Model hanya memberi saran penandaan. Keputusan akhir tetap ada pada moderator.
+- `models/p9.joblib` dan `models/p3.joblib` dilatih dengan kode eksperimen penelitian (seed 11) melalui `tools/latih_model.py`.
+  Prediksinya identik dengan prediksi seed 11 yang dilaporkan pada penelitian (`models/info_model.json`).
+- `src/` berisi kode eksperimen yang dibutuhkan untuk prediksi.
+- `hasil/*.csv` berisi tabel hasil eksperimen (rata-rata seed 11, 911, 99).
+- `data/confusables.txt` adalah tabel UTS #39 dari Unicode, Inc. (lihat ketentuan penggunaan di kepala berkas).
+- Dataset tidak disertakan. Data yang dipakai adalah dataset komentar judi online YouTube dari Kaggle.
+
+## Author
+
+**Qalam**. Aplikasi ini dibuat sebagai bagian dari tugas akhir (skripsi).
