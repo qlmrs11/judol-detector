@@ -1,5 +1,7 @@
 # Judol Detector
 
+Aplikasi daring: **https://judol-detector.streamlit.app**
+
 Aplikasi web untuk mendeteksi komentar promosi judi online (judol) di YouTube yang disamarkan dengan karakter Unicode,
 misalnya `ʀᴀᴊᴀᴄᴜᴀɴ88`, `ⓡⓐⓙⓐ`, atau `𝐫𝐚𝐣𝐚𝐜𝐮𝐚𝐧`. Huruf-huruf tersebut tampak seperti huruf biasa bagi manusia,
 tetapi berbeda bagi komputer, sehingga filter kata kunci mudah ditembus.
