@@ -1,6 +1,6 @@
 # Judol Detector
 
-Aplikasi daring: **https://judol-detector.streamlit.app**
+Aplikasi daring: **https://judol-detector-qlmrs11.streamlit.app**
 
 - Pipeline penelitian lengkap (Google Colab): https://colab.research.google.com/drive/129fKs5DFibSb4MG7QeIdBZKn37PL98jn?usp=sharing
 - Dataset (Kaggle): https://www.kaggle.com/datasets/yaemico/judionline
