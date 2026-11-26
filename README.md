@@ -2,6 +2,9 @@
 
 Aplikasi daring: **https://judol-detector.streamlit.app**
 
+- Pipeline penelitian lengkap (Google Colab): https://colab.research.google.com/drive/129fKs5DFibSb4MG7QeIdBZKn37PL98jn?usp=sharing
+- Dataset (Kaggle): https://www.kaggle.com/datasets/yaemico/judionline
+
 Aplikasi web untuk mendeteksi komentar promosi judi online (judol) di YouTube yang disamarkan dengan karakter Unicode,
 misalnya `ʀᴀᴊᴀᴄᴜᴀɴ88`, `ⓡⓐⓙⓐ`, atau `𝐫𝐚𝐣𝐚𝐜𝐮𝐚𝐧`. Huruf-huruf tersebut tampak seperti huruf biasa bagi manusia,
 tetapi berbeda bagi komputer, sehingga filter kata kunci mudah ditembus.
@@ -59,7 +62,11 @@ Gunakan Python 3.11. Versi scikit-learn dikunci karena model hanya dapat dimuat 
 - `src/` berisi kode eksperimen yang dibutuhkan untuk prediksi.
 - `hasil/*.csv` berisi tabel hasil eksperimen (rata-rata seed 11, 911, 99).
 - `data/confusables.txt` adalah tabel UTS #39 dari Unicode, Inc. (lihat ketentuan penggunaan di kepala berkas).
-- Dataset tidak disertakan. Data yang dipakai adalah dataset komentar judi online YouTube dari Kaggle.
+- Dataset tidak disertakan di repositori ini. Data yang dipakai adalah dataset komentar judi online YouTube dari Kaggle
+  ([yaemico/judionline](https://www.kaggle.com/datasets/yaemico/judionline), 10.230 komentar).
+- Seluruh pipeline penelitian, dari pembersihan data, pembentukan skenario uji S0 sampai S4, pelatihan semua model,
+  hingga evaluasi, dapat dibuka dan dijalankan ulang di
+  [Google Colab](https://colab.research.google.com/drive/129fKs5DFibSb4MG7QeIdBZKn37PL98jn?usp=sharing).
 
 ## Author
 
